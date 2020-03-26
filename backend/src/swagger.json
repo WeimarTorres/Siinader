@@ -1,0 +1,1110 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Siinader API",
+        "description": "Documentación de la API usada para el sistema Siinader",
+        "servers": [
+            "http://localhost:3000"
+        ]
+    },
+    "host": "localhost:3000",
+    "basePath": "",
+    "tags": [
+        {
+            "name": "Siinader",
+            "description": "API para un sistema academico de la carrera de derecho en la Universidad Publica de El Alto"
+        }
+    ],
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/api/estudiantes": {
+            "get": {
+                "tags": [
+                    {
+                        "name": "Estudiante",
+                        "description": " API para los estudiantes"
+                    }
+                ],
+                "summary": "Obtiene todos los estudiantes",
+                "responses": {
+                    "200": {
+                        "description": "Respuesta exitosa",
+                        "schema": {
+                            "$ref": "#/definitions/Estudiante"
+                        }
+                    },
+                    "400": {
+                        "description": "Datos enviados incorrectos"
+                    },
+                    "404": {
+                        "description": "No encontrado"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    {
+                        "name": "Estudiante",
+                        "description": " API para los estudiantes"
+                    }
+                ],
+                "summary": "Crea un estudiante",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "El estudiantes que se creará, no debe incluir id",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Estudiante"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Respuesta exitosa",
+                        "schema": {
+                            "$ref": "#/definitions/Estudiante"
+                        }
+                    },
+                    "400": {
+                        "description": "Datos enviados incorrectos"
+                    },
+                    "404": {
+                        "description": "No encontrado"
+                    }
+                }
+            }
+        },
+        "/api/estudiantes/:id": {
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID del estudiante",
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "tags": [
+                    {
+                        "name": "Estudiante",
+                        "description": " API para los estudiantes"
+                    }
+                ],
+                "summary": "Obtiene el estudiante con el ID dado",
+                "responses": {
+                    "200": {
+                        "description": "Respuesta exitosa",
+                        "schema": {
+                            "$ref": "#/definitions/Estudiante"
+                        }
+                    },
+                    "400": {
+                        "description": "Datos enviados incorrectos"
+                    },
+                    "404": {
+                        "description": "No encontrado"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    {
+                        "name": "Estudiante",
+                        "description": " API para los estudiantes"
+                    }
+                ],
+                "summary": "Actualiza al estudiante con el ID dado",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "description": "El estudiante se actulizará, no debe incluir CI",
+                        "schema": {
+                            "$ref": "#/definitions/Estudiante"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Respuesta exitosa",
+                        "schema": {
+                            "$ref": "#/definitions/Estudiante"
+                        }
+                    },
+                    "400": {
+                        "description": "Datos enviados incorrectos"
+                    },
+                    "404": {
+                        "description": "No encontrado"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    {
+                        "name": "Estudiante",
+                        "description": " API para los estudiantes"
+                    }
+                ],
+                "summary": "Elimina al estudiante con el ID dado",
+                "responses": {
+                    "200": {
+                        "description": "Respuesta exitosa",
+                        "schema": {
+                            "$ref": "#/definitions/Estudiante"
+                        }
+                    },
+                    "400": {
+                        "description": "Datos enviados incorrectos"
+                    },
+                    "404": {
+                        "description": "No encontrado"
+                    }
+                }
+            }
+        },
+        "/api/docentes": {
+            "get": {
+                "tags": [
+                    {
+                        "name": "Docente",
+                        "description": " API para los docentes"
+                    }
+                ],
+                "summary": "Obtiene todos los docentes",
+                "responses": {
+                    "200": {
+                        "description": "Respuesta exitosa",
+                        "schema": {
+                            "$ref": "#/definitions/Docente"
+                        }
+                    },
+                    "400": {
+                        "description": "Datos enviados incorrectos"
+                    },
+                    "404": {
+                        "description": "No encontrado"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    {
+                        "name": "Docente",
+                        "description": " API para los docentes"
+                    }
+                ],
+                "summary": "Crea un docente",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "El docente que se creará, no debe incluir id",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Docente"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Respuesta exitosa",
+                        "schema": {
+                            "$ref": "#/definitions/Docente"
+                        }
+                    },
+                    "400": {
+                        "description": "Datos enviados incorrectos"
+                    },
+                    "404": {
+                        "description": "No encontrado"
+                    }
+                }
+            }
+        },
+        "/api/docentes/:id": {
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID del docente",
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "tags": [
+                    {
+                        "name": "Docente",
+                        "description": " API para los docentes"
+                    }
+                ],
+                "summary": "Obtiene el docente con el ID dado",
+                "responses": {
+                    "200": {
+                        "description": "Respuesta exitosa",
+                        "schema": {
+                            "$ref": "#/definitions/Docente"
+                        }
+                    },
+                    "400": {
+                        "description": "Datos enviados incorrectos"
+                    },
+                    "404": {
+                        "description": "No encontrado"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    {
+                        "name": "Docente",
+                        "description": " API para los docentes"
+                    }
+                ],
+                "summary": "Actualiza al docente con el ID dado",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "description": "El docente se actulizará, no debe incluir CI",
+                        "schema": {
+                            "$ref": "#/definitions/Docente"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Respuesta exitosa",
+                        "schema": {
+                            "$ref": "#/definitions/Docente"
+                        }
+                    },
+                    "400": {
+                        "description": "Datos enviados incorrectos"
+                    },
+                    "404": {
+                        "description": "No encontrado"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    {
+                        "name": "Docente",
+                        "description": " API para los docentes"
+                    }
+                ],
+                "summary": "Elimina al docente con el ID dado",
+                "responses": {
+                    "200": {
+                        "description": "Respuesta exitosa",
+                        "schema": {
+                            "$ref": "#/definitions/Docente"
+                        }
+                    },
+                    "400": {
+                        "description": "Datos enviados incorrectos"
+                    },
+                    "404": {
+                        "description": "No encontrado"
+                    }
+                }
+            }
+        },
+        "/api/materias": {
+            "get": {
+                "tags": [
+                    {
+                        "name": "Materia",
+                        "description": " API para las materias"
+                    }
+                ],
+                "summary": "Obtiene todos las materias",
+                "responses": {
+                    "200": {
+                        "description": "Respuesta exitosa",
+                        "schema": {
+                            "$ref": "#/definitions/Materia"
+                        }
+                    },
+                    "400": {
+                        "description": "Datos enviados incorrectos"
+                    },
+                    "404": {
+                        "description": "No encontrado"
+                    }
+                }
+            }
+        },
+        "/api/materias/:id": {
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID de la materia que se quiere obtener",
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "tags": [
+                    {
+                        "name": "Materia",
+                        "description": " API para las materias"
+                    }
+                ],
+                "summary": "Obtiene la materia con el ID dado",
+                "responses": {
+                    "200": {
+                        "description": "Respuesta exitosa",
+                        "schema": {
+                            "$ref": "#/definitions/Materia"
+                        }
+                    },
+                    "400": {
+                        "description": "Datos enviados incorrectos"
+                    },
+                    "404": {
+                        "description": "No encontrado"
+                    }
+                }
+            }
+        },
+        "/api/estudiantes/:id/materias": {
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID del estudiante del que se quiere obtener materias y notas",
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "tags": [
+                    {
+                        "name": "Materias y notas",
+                        "description": " API para las materias y notas"
+                    }
+                ],
+                "summary": "Obtiene las materias y notas con el ID dado",
+                "responses": {
+                    "200": {
+                        "description": "Respuesta exitosa",
+                        "schema": {
+                            "$ref": "#/definitions/Estudiante_has_materia"
+                        }
+                    },
+                    "400": {
+                        "description": "Datos enviados incorrectos"
+                    },
+                    "404": {
+                        "description": "No encontrado"
+                    }
+                }
+            }
+        },
+        "/api/jefeCarrera/inscripcion": {
+            "post": {
+                "tags": [
+                    {
+                        "name": "Asignación",
+                        "description": " API para las asignaciones"
+                    }
+                ],
+                "summary": "Asigna un estudiante a una materia",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "El estudiante sera asignado, no debe incluir ninguna nota",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Estudiante_has_materia"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Respuesta exitosa",
+                        "schema": {
+                            "$ref": "#/definitions/Estudiante_has_materia"
+                        }
+                    },
+                    "400": {
+                        "description": "Datos enviados incorrectos"
+                    },
+                    "404": {
+                        "description": "No encontrado"
+                    }
+                }
+            }
+        },
+        "/api/jefeCarrera/asignacion": {
+            "post": {
+                "tags": [
+                    {
+                        "name": "Asignación",
+                        "description": " API para las asignaciones"
+                    }
+                ],
+                "summary": "Asigna un docente a una materia",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "El docente sera asignado",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Docente_has_materia"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Respuesta exitosa",
+                        "schema": {
+                            "$ref": "#/definitions/Docente_has_materia"
+                        }
+                    },
+                    "400": {
+                        "description": "Datos enviados incorrectos"
+                    },
+                    "404": {
+                        "description": "No encontrado"
+                    }
+                }
+            }
+        },
+        "/api/docentes/notas/:idEstudiante/:idMateria": {
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID del estudiante",
+                    "type": "string"
+                },
+                {
+                    "name": "id2",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID de la materia",
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "tags": [
+                    {
+                        "name": "Notas",
+                        "description": " API para las notas"
+                    }
+                ],
+                "summary": "Obtiene las notas del estudiante con los ID dados",
+                "responses": {
+                    "200": {
+                        "description": "Respuesta exitosa",
+                        "schema": {
+                            "$ref": "#/definitions/Estudiante_has_materia"
+                        }
+                    },
+                    "400": {
+                        "description": "Datos enviados incorrectos"
+                    },
+                    "404": {
+                        "description": "No encontrado"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    {
+                        "name": "Notas",
+                        "description": " API para las notas"
+                    }
+                ],
+                "summary": "Actualiza las notas del estudiante con los ID dados",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "description": "Las notas se actulizaran, no debe incluir aula, hora_inicio y semestre_cursada",
+                        "schema": {
+                            "$ref": "#/definitions/Estudiante_has_materia"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Respuesta exitosa",
+                        "schema": {
+                            "$ref": "#/definitions/Estudiante_has_materia"
+                        }
+                    },
+                    "400": {
+                        "description": "Datos enviados incorrectos"
+                    },
+                    "404": {
+                        "description": "No encontrado"
+                    }
+                }
+            }
+        },
+        "/api/docentes/:id/materias": {
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID del docente del que se quiere obtener materias",
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "tags": [
+                    {
+                        "name": "Docentes y materias",
+                        "description": " API para los docentes y materias"
+                    }
+                ],
+                "summary": "Obtiene las materias que un docente dicta el ID dado",
+                "responses": {
+                    "200": {
+                        "description": "Respuesta exitosa",
+                        "schema": {
+                            "$ref": "#/definitions/Docente_has_materia"
+                        }
+                    },
+                    "400": {
+                        "description": "Datos enviados incorrectos"
+                    },
+                    "404": {
+                        "description": "No encontrado"
+                    }
+                }
+            }
+        },
+        "/api/kardex/materias": {
+            "get": {
+                "tags": [
+                    {
+                        "name": "Docentes y materias",
+                        "description": " API para los docentes y materias"
+                    }
+                ],
+                "summary": "Obtiene las materias que los docentes dictan",
+                "responses": {
+                    "200": {
+                        "description": "Respuesta exitosa",
+                        "schema": {
+                            "$ref": "#/definitions/Docente_has_materia"
+                        }
+                    },
+                    "400": {
+                        "description": "Datos enviados incorrectos"
+                    },
+                    "404": {
+                        "description": "No encontrado"
+                    }
+                }
+            }
+        },
+        "/api/kardex": {
+            "get": {
+                "tags": [
+                    {
+                        "name": "Kardex",
+                        "description": " API para los kardex"
+                    }
+                ],
+                "summary": "Obtiene todos los kardex",
+                "responses": {
+                    "200": {
+                        "description": "Respuesta exitosa",
+                        "schema": {
+                            "$ref": "#/definitions/Kardex"
+                        }
+                    },
+                    "400": {
+                        "description": "Datos enviados incorrectos"
+                    },
+                    "404": {
+                        "description": "No encontrado"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    {
+                        "name": "Kardex",
+                        "description": " API para los kardex"
+                    }
+                ],
+                "summary": "Crea un kardex",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "El kardex que se creará, no debe incluir id",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Kardex"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Respuesta exitosa",
+                        "schema": {
+                            "$ref": "#/definitions/Kardex"
+                        }
+                    },
+                    "400": {
+                        "description": "Datos enviados incorrectos"
+                    },
+                    "404": {
+                        "description": "No encontrado"
+                    }
+                }
+            }
+        },
+        "/api/kardex/{id}": {
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID del kardex que se quiere obtener",
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "tags": [
+                    {
+                        "name": "Kardex",
+                        "description": " API para los kardex"
+                    }
+                ],
+                "summary": "Obtiene el kardex con el ID dado",
+                "responses": {
+                    "200": {
+                        "description": "Respuesta exitosa",
+                        "schema": {
+                            "$ref": "#/definitions/Kardex"
+                        }
+                    },
+                    "400": {
+                        "description": "Datos enviados incorrectos"
+                    },
+                    "404": {
+                        "description": "No encontrado"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    {
+                        "name": "Kardex",
+                        "description": " API para los kardex"
+                    }
+                ],
+                "summary": "Actualiza al kardex con el ID dado",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "description": "El kardex se actulizará, no debe incluir CI",
+                        "schema": {
+                            "$ref": "#/definitions/Kardex"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Respuesta exitosa",
+                        "schema": {
+                            "$ref": "#/definitions/Kardex"
+                        }
+                    },
+                    "400": {
+                        "description": "Datos enviados incorrectos"
+                    },
+                    "404": {
+                        "description": "No encontrado"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    {
+                        "name": "Kardex",
+                        "description": " API para los kardex"
+                    }
+                ],
+                "summary": "Elimina al kardex con el ID dado",
+                "responses": {
+                    "200": {
+                        "description": "Respuesta exitosa",
+                        "schema": {
+                            "$ref": "#/definitions/Kardex"
+                        }
+                    },
+                    "400": {
+                        "description": "Datos enviados incorrectos"
+                    },
+                    "404": {
+                        "description": "No encontrado"
+                    }
+                }
+            }
+        },
+        "/api/jefeCarrera": {
+            "get": {
+                "tags": [
+                    {
+                        "name": "Jefe de carrera",
+                        "description": " API para los jefes de carrera"
+                    }
+                ],
+                "summary": "Obtiene todos los jefes de carrera",
+                "responses": {
+                    "200": {
+                        "description": "Respuesta exitosa",
+                        "schema": {
+                            "$ref": "#/definitions/JefeDeCarrera"
+                        }
+                    },
+                    "400": {
+                        "description": "Datos enviados incorrectos"
+                    },
+                    "404": {
+                        "description": "No encontrado"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    {
+                        "name": "Jefe de carrera",
+                        "description": " API para los jefes de carrera"
+                    }
+                ],
+                "summary": "Crea un jefe de carrera",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "El jefes de carrera que se creará, no debe incluir id",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/JefeDeCarrera"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Respuesta exitosa",
+                        "schema": {
+                            "$ref": "#/definitions/JefeDeCarrera"
+                        }
+                    },
+                    "400": {
+                        "description": "Datos enviados incorrectos"
+                    },
+                    "404": {
+                        "description": "No encontrado"
+                    }
+                }
+            }
+        },
+        "/api/jefeCarrera/{id}": {
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID del jefe de carrera que se quiere obtener",
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "tags": [
+                    {
+                        "name": "Jefe de carrera",
+                        "description": " API para los jefes de carrera"
+                    }
+                ],
+                "summary": "Obtiene el jefe de carrera con el ID dado",
+                "responses": {
+                    "200": {
+                        "description": "Respuesta exitosa",
+                        "schema": {
+                            "$ref": "#/definitions/JefeDeCarrera"
+                        }
+                    },
+                    "400": {
+                        "description": "Datos enviados incorrectos"
+                    },
+                    "404": {
+                        "description": "No encontrado"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    {
+                        "name": "Jefe de carrera",
+                        "description": " API para los jefes de carrera"
+                    }
+                ],
+                "summary": "Actualiza al jefe de carrera con el ID dado",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "description": "El jefes de carrera se actulizará, no debe incluir CI",
+                        "schema": {
+                            "$ref": "#/definitions/JefeDeCarrera"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Respuesta exitosa",
+                        "schema": {
+                            "$ref": "#/definitions/JefeDeCarrera"
+                        }
+                    },
+                    "400": {
+                        "description": "Datos enviados incorrectos"
+                    },
+                    "404": {
+                        "description": "No encontrado"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    {
+                        "name": "Jefe de carrera",
+                        "description": " API para los jefes de carrera"
+                    }
+                ],
+                "summary": "Elimina al Jefe de carrera con el ID dado",
+                "responses": {
+                    "200": {
+                        "description": "Respuesta exitosa",
+                        "schema": {
+                            "$ref": "#/definitions/JefeDeCarrera"
+                        }
+                    },
+                    "400": {
+                        "description": "Datos enviados incorrectos"
+                    },
+                    "404": {
+                        "description": "No encontrado"
+                    }
+                }
+            }
+        }                
+    },
+
+    "definitions": {
+        "Estudiante": {
+            "properties": {
+                "idEstudiante": {
+                    "type": "integer"
+                },
+                "nombre": {
+                    "type": "string"
+                },
+                "apellido_1": {
+                    "type": "string"
+                },
+                "apellido_2": {
+                    "type": "string"
+                },
+                "ci": {
+                    "type": "integer"
+                },
+                "fecha_nacimiento": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                }
+            }
+        },
+        "Docente": {
+            "properties": {
+                "idDocente": {
+                    "type": "integer"
+                },
+                "nombre": {
+                    "type": "string"
+                },
+                "apellido_1": {
+                    "type": "string"
+                },
+                "apellido_2": {
+                    "type": "string"
+                },
+                "ci": {
+                    "type": "integer"
+                },
+                "fecha_nacimiento": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                }
+            }
+        },
+        "JefeDeCarrera": {
+            "properties": {
+                "idJefeCarrera": {
+                    "type": "integer"
+                },
+                "nombre": {
+                    "type": "string"
+                },
+                "apellido_1": {
+                    "type": "string"
+                },
+                "apellido_2": {
+                    "type": "string"
+                },
+                "ci": {
+                    "type": "integer"
+                },
+                "fecha_nacimiento": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                }
+            }
+        },
+        "Kardex": {
+            "properties": {
+                "idKardex": {
+                    "type": "integer"
+                },
+                "nombre": {
+                    "type": "string"
+                },
+                "apellido_1": {
+                    "type": "string"
+                },
+                "apellido_2": {
+                    "type": "string"
+                },
+                "ci": {
+                    "type": "integer"
+                },
+                "fecha_nacimiento": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                }
+            }
+        },
+        "Materia": {
+            "properties": {
+                "idMateria": {
+                    "type": "integer"
+                },
+                "nombre": {
+                    "type": "string"
+                },
+                "creditos": {
+                    "type": "integer"
+                },
+                "semestre": {
+                    "type": "integer"
+                }
+            }
+        },
+        "Docente_has_materia": {
+            "properties": {
+                "docente_idDocente": {
+                    "type": "integer"
+                },
+                "materias_idMateria": {
+                    "type": "integer"
+                },
+                "aula": {
+                    "type": "string"
+                },
+                "hora_inicio": {
+                    "type": "integer"
+                }
+            }
+        },
+        "Estudiante_has_materia": {
+            "properties": {
+                "materias_idMateria": {
+                    "type": "integer"
+                },
+                "estudiante_idEstudiante": {
+                    "type": "integer"
+                },
+                "aula": {
+                    "type": "string"
+                },
+                "hora_inicio": {
+                    "type": "string"
+                },
+                "nota1er": {
+                    "type": "integer"
+                },
+                "nota2do": {
+                    "type": "integer"
+                },
+                "nota3er": {
+                    "type": "integer"
+                },
+                "semestre_cursada": {
+                    "type": "integer"
+                }
+            }
+        }
+    }
+}
